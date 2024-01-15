@@ -9,7 +9,7 @@ This is the official repository for the paper [MARIO: MAth Reasoning with code I
 |     	| Base Model: Llemma                                           	| Outcome Value Model                                                    	| 
 |-----	|---------------------------------------------------------------	|---------------------------------------------------------------------------	|
 | 7B  	|[🤗](https://huggingface.co/MARIO/MARIO-7B)[🤖](https://www.modelscope.cn/models/damo/MARIO-7B)MARIO-7B| [🤗](https://huggingface.co/MARIO/MARIO-OVM-7B)[🤖](https://www.modelscope.cn/models/damo/MARIO-OVM-7B)MARIO-OVM-7B|
-| 34B 	|[🤗](https://huggingface.co/MARIO/MARIO-34B)[🤖](https://www.modelscope.cn/models/damo/MARIO-34B)|MARIO-34B|
+| 34B 	|[🤗](https://huggingface.co/MARIO/MARIO-34B)[🤖](https://www.modelscope.cn/models/damo/MARIO-34B)MARIO-34B||
 
 
 ## Performance
