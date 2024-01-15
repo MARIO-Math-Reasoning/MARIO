@@ -1,9 +1,9 @@
 # MARIO
 
-This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](www.arxiv.org). We release our code and dataset here.
+This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](www.arxiv.org). We release our codes.
 
 
-[🤗](https://huggingface.co/datasets/TIGER-Lab/MathInstruct)[🤖](https://www.modelscope.cn/datasets/damo/MARIO)MARIO REACT Corpus
+MARIO REACT Corpus coming soon.
 
 
 |     	| Base Model: Llemma                                           	| Outcome Value Model                                                    	| 
