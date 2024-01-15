@@ -15,20 +15,28 @@ MARIO REACT Corpus[🤗](https://huggingface.co/datasets/TIGER-Lab/MathInstruct)
 ## Performance
 We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 
-| **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **MMLU-Math** |
-|---------------------------|---------------|-----------|-----------|-----------|
-| MAmmoTH-7B             	| **Hybrid**   	| 53.6  	| 31.5 	    | 44.5   	|
-| MAmmoTH-Coder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|
-| MetaMath-7B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | 49.3      |
-| OpenChat-3.5-7B           | **CoT**   	| 77.3 	    | 28.6 	    | 49.6      |
-| ChatGLM-3-6B              | **CoT**       | 72.3      | 25.7      | 45.6      | 
-| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | 46.5      |
-| Grok-1                    | **CoT**       | 62.9      | 15.7      | -         |
-| QWen-72B                  | **CoT**       | 78.9      | 35.2      | -         |
-| DeepSeek-67B-Chat         | **CoT**       | **84.1**  | 32.6      | -         |
-| MathCoder-7B  	    | **Hybrid**   	| 75.0   	| **40.0** 	| **52.5**  |
-| MAmmoTH-7B-Mistral  	    | **Hybrid**   	| 75.0   	| **40.0** 	| **52.5**  |
-| MARIO-7B  	    | **Hybrid**   	| 75.0   	| **40.0** 	| **52.5**  |
+| **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
+|---------------------------|---------------|-----------|-----------|-----------|-----------|
+| MARIO-7B             	| **REACT**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
+| TORA-Coder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
+| MAmmoTH-Coder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
+| MathCoder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
+| MetaMath-7B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | 49.3      |44.5   	|
+| OpenChat-3.5-7B           | **CoT**   	| 77.3 	    | 28.6 	    | 49.6      |44.5   	|
+| ChatGLM-3-6B              | **CoT**       | 72.3      | 25.7      | 45.6      | 44.5   	|
+| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | 46.5      |44.5   	|
+| MathCoder-7B  	    | **Hybrid**   	| 75.0   	| **40.0** 	| **52.5**  |44.5   	|
+
+| **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
+|---------------------------|---------------|-----------|-----------|-----------|-----------|
+| MARIO-34B             	| **REACT**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
+| TORA-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
+| MAmmoTH-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
+| MathCoder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
+| MetaMath-34B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | 49.3      |44.5   	|
+| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | 46.5      |44.5   	|
+| QWen-72B                  | **CoT**       | 78.9      | 35.2      | -         |44.5   	|
+| MathCoder-34B  	    | **Hybrid**   	| 75.0   	| **40.0** 	| **52.5**  |44.5   	|
 
 ## **Installation**
 
