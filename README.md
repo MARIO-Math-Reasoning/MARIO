@@ -17,26 +17,23 @@ We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 
 | **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
 |---------------------------|---------------|-----------|-----------|-----------|-----------|
-| MARIO-7B             	| **REACT**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
+| MARIO-7B             	| **Hybrid**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
 | ToRA-Coder-7B  	    | **Hybrid**   	| 72.6  	| 44.6  	| 4.8  	| 23.9	|
 | MAmmoTH-Coder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 11.0  	| 15.3	|
 | MathCoder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| -  	|-   	|
 | MetaMath-7B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | -      |-   	|
 | OpenChat-3.5-7B           | **CoT**   	| 77.3 	    | 28.6 	    | -      |-   	|
 | ChatGLM-3-6B              | **CoT**       | 72.3      | 25.7      | -  | - |
-| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | - | - |
-| MathCoder-7B  	    | **Hybrid**   	| 75.0   	| 40.0 	| - |-|
 
 | **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
 |---------------------------|---------------|-----------|-----------|-----------|-----------|
-| MARIO-34B             	| **REACT**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
-| TORA-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
-| MAmmoTH-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
-| MathCoder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 47.2  	|44.5   	|
-| MetaMath-34B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | 49.3      |44.5   	|
-| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | 46.5      |44.5   	|
-| QWen-72B                  | **CoT**       | 78.9      | 35.2      | -         |44.5   	|
-| MathCoder-34B  	    | **Hybrid**   	| 75.0   	| **40.0** 	| **52.5**  |44.5   	|
+| MARIO-34B             	| **Hybrid**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
+| ToRA-Coder-34B  	    | **Hybrid**   	| 80.7  	| 50.8  	| 5.5  	|31.7	|
+| MAmmoTH-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 14.0  |25.2 	|
+| MathCoder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| -	| -	|
+| MetaMath-34B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | - |-	|
+| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | -     |-	|
+| QWen-72B                  | **CoT**       | 78.9      | 35.2      | -         |-   	|
 
 ## **Installation**
 
