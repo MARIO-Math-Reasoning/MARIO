@@ -17,8 +17,8 @@ We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 
 | **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
 |---------------------------|---------------|-----------|-----------|-----------|-----------|
-| MARIO-OVM-7B + OVM@20	| **Hybrid**   	|   	|     |  	|	|
-| MARIO-7B + OVM@20  	| **Hybrid**   	| 82.9  	| **59.1** 	    | 28.3   	|45.2   	|
+| MARIO-OVM-7B + OVM@20	| **Hybrid**   	| **83.6** | **60.6**    | 25.4 |	42.9 |
+| MARIO-7B + OVM@20  	| **Hybrid**   	| 82.9  	| 59.1  | **28.3**   	| **45.2** 	|
 | MARIO-OVM-7B       	| **Hybrid**   	| 74.5  	| 47.7 	    | 19.1   	|32.5   	|
 | MARIO-7B             	| **Hybrid**   	| 70.1  	| 46.3 	    | 19.9  	|35.6   	|
 | ToRA-Coder-7B  	    | **Hybrid**   	| 72.6  	| 44.6  	| 4.8  	| 23.9	|
