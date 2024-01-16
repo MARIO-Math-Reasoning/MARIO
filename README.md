@@ -23,7 +23,7 @@ We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 | MARIO-7B             	| **Hybrid**   	| 70.1  	| 46.3 	    | 19.9  	|35.6   	|
 | ToRA-Coder-7B  	    | **Hybrid**   	| 72.6  	| 44.6  	| 4.8  	| 23.9	|
 | MAmmoTH-Coder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 11.0  	| 15.3	|
-| MathCoder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| -  	|-   	|
+| MathCoder-7B  	    | **Hybrid**   	| 67.8  	| 30.2 	| -  	|-   	|
 | MetaMath-7B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | -      |-   	|
 | OpenChat-3.5-7B           | **CoT**   	| 77.3 	    | 28.6 	    | -      |-   	|
 | ChatGLM-3-6B              | **CoT**       | 72.3      | 25.7      | -  | - |
@@ -32,10 +32,9 @@ We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 |---------------------------|---------------|-----------|-----------|-----------|-----------|
 | MARIO-34B             	| **Hybrid**   	| 78.7  	| **53.1** 	    | **25.4**   	|**41.3**   	|
 | ToRA-Coder-34B  	    | **Hybrid**   	| 80.7  	| 50.8  	| 5.5  	|31.7	|
-| MAmmoTH-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 14.0  |25.2 	|
-| MathCoder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| -	| -	|
-| MetaMath-34B-Mistral       | **CoT**   	| 77.7  	| 28.2 	    | - |-	|
-| DeepSeek-Coder-34B        | **PoT**   	| 58.2   	| 35.3 	    | -     |-	|
+| MAmmoTH-Coder-34B  	    | **Hybrid**   	| 72.7  	| 43.6  	| 14.0  |25.2 	|
+| MathCoder-34B  	    | **Hybrid**   	| 81.7  	| 45.2  	| -	| -	|
+| DeepSeek-Coder-33B        | **PoT**   	| 60.7   	| 29.1 	    | -     |-	|
 | QWen-72B                  | **CoT**       | 78.9      | 35.2      | -         |-   	|
 
 ## **Installation**
