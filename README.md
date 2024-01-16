@@ -17,7 +17,10 @@ We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 
 | **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
 |---------------------------|---------------|-----------|-----------|-----------|-----------|
-| MARIO-7B             	| **Hybrid**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
+| MARIO-OVM-7B + OVM@20	| **Hybrid**   	|   	|     |  	|	|
+| MARIO-7B + OVM@20  	| **Hybrid**   	| 82.9  	| **59.1** 	    | 28.3   	|45.2   	|
+| MARIO-OVM-7B       	| **Hybrid**   	| 74.5  	| 47.7 	    | 19.1   	|32.5   	|
+| MARIO-7B             	| **Hybrid**   	| 70.1  	| 46.3 	    | 19.9  	|35.6   	|
 | ToRA-Coder-7B  	    | **Hybrid**   	| 72.6  	| 44.6  	| 4.8  	| 23.9	|
 | MAmmoTH-Coder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 11.0  	| 15.3	|
 | MathCoder-7B  	    | **Hybrid**   	| 59.4  	| 33.4  	| -  	|-   	|
@@ -27,7 +30,7 @@ We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 
 | **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
 |---------------------------|---------------|-----------|-----------|-----------|-----------|
-| MARIO-34B             	| **Hybrid**   	| 53.6  	| 31.5 	    | 44.5   	|44.5   	|
+| MARIO-34B             	| **Hybrid**   	| 78.7  	| **53.1** 	    | **25.4**   	|**41.3**   	|
 | ToRA-Coder-34B  	    | **Hybrid**   	| 80.7  	| 50.8  	| 5.5  	|31.7	|
 | MAmmoTH-Coder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| 14.0  |25.2 	|
 | MathCoder-34B  	    | **Hybrid**   	| 59.4  	| 33.4  	| -	| -	|
