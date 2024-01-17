@@ -1,6 +1,6 @@
 # MARIO
 
-This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](www.arxiv.org). We release our codes.
+This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](http://arxiv.org/abs/2401.08190). We release our codes.
 
 
 MARIO REACT Corpus coming soon.
@@ -67,6 +67,9 @@ To replicate the experimental results in our paper, run:
 ```bash
 
 ```
+
+## Acknowledgements
+- hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
 
 ## **Citation**
 
