@@ -50,6 +50,8 @@ pip install -e ./math_evaluation
 
 ## **Training and Inference**
 
+Our training is mostly performed on LLaMA-Factory code base. Please refer to that repo for more details.
+
 Coming Soon
 
 ### **Quick Start**
