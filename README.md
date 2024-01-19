@@ -1,9 +1,10 @@
 # MARIO
 
-This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](http://arxiv.org/abs/2401.08190). We release our codes.
+This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](http://arxiv.org/abs/2401.08190). We release our codes and data.
 
 
 MARIO REACT Corpus coming soon.
+[🤗](https://huggingface.co/datasets/MARIO-Math-Reasoning/Gaokao2023-Math-En)[🤖](https://www.modelscope.cn/datasets/iic/)Gaokao-2023-ME are released here
 
 
 |     	| Base Model: Llemma                                           	| Outcome Value Model                                                    	| 
@@ -13,6 +14,7 @@ MARIO REACT Corpus coming soon.
 
 
 ## Performance
+
 We demonstrate the results of our MARIO-7B and MARIO-34B as follows:
 
 | **Model**             	| **Decoding** 	| **GSM**  	| **MATH** 	| **OCWCourse** | **Gaokao-2023-ME** | 
@@ -55,20 +57,12 @@ Our training is mostly performed on LLaMA-Factory code base. Please refer to tha
 Coming Soon
 
 ### **Quick Start**
-To play with our model, run:
 
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers.generation import GenerationConfig
-```
+Coming Soon
 
 ### **Large-scale Evaluation with vllm**
 
-To replicate the experimental results in our paper, run:
-
-```bash
-
-```
+Coming Soon
 
 ## Acknowledgements
 - hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
