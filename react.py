@@ -181,7 +181,7 @@ def parse_args():
     args.add_argument('--verbose', action="store_true", help="print intermediate result on screen")
     args.add_argument('--temperature', type=float, default=0, help="for sampling")
 
-    args.add_argument('--question', type=str, default=None, help="question")
+    args.add_argument('-q', '--question', type=str, default=None, help="question")
 
     args = args.parse_args()
     return args

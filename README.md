@@ -55,10 +55,10 @@ pip install -e ./math_evaluation
 Our training is mostly performed on LLaMA-Factory code base. Please refer to that repo for more details.
 
 ### **Quick Start**
-See react.py file
+Single question inference with visualization.
 
 ```bash
-python react.py -c /path/to/result_output --verbose
+python react.py -c /path/to/checkpoint_dir -q "Compute tan(45)." --verbose
 ```
 
 ### **Large-scale Evaluation with vllm**
@@ -66,6 +66,8 @@ python react.py -c /path/to/result_output --verbose
 ```bash
 python batch_react.py -c /path/to/result_output -q /path/to/question_file
 ```
+
+Question file should be in `jsonl` format, where each line is a json string. The json string should at least include a key value pair for question.
 
 ## Acknowledgements
 - hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
