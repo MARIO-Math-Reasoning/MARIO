@@ -11,6 +11,7 @@ from termcolor import colored
 from tqdm import tqdm
 from vllm import LLM, SamplingParams
 from pebble import ProcessPool
+from concurrent.futures import TimeoutError
 
 from react import ReactSolver, STOP
 
