@@ -54,15 +54,18 @@ pip install -e ./math_evaluation
 
 Our training is mostly performed on LLaMA-Factory code base. Please refer to that repo for more details.
 
-Coming Soon
-
 ### **Quick Start**
+See react.py file
 
-Coming Soon
+```bash
+python react.py -c /path/to/result_output --verbose
+```
 
 ### **Large-scale Evaluation with vllm**
 
-Coming Soon
+```bash
+python batch_react.py -c /path/to/result_output -q /path/to/question_file
+```
 
 ## Acknowledgements
 - hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
