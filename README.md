@@ -2,6 +2,7 @@
 
 This is the official repository for the paper [MARIO: MAth Reasoning with code Interpreter Output -- A Reproducible Pipeline](http://arxiv.org/abs/2401.08190). We release our codes and data.
 
+![](https://github.com/MARIO-Math-Reasoning/MARIO/blob/main/imgs/example.png)
 
 MARIO REACT Corpus coming soon.
 [🤗](https://huggingface.co/datasets/MARIO-Math-Reasoning/Gaokao2023-Math-En)[🤖](https://www.modelscope.cn/datasets/iic/)Gaokao-2023-ME are released here
