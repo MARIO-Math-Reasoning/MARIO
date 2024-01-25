@@ -9,8 +9,8 @@ MARIO REACT Corpus coming soon.
 
 |     	| Base Model: Llemma                                           	| Outcome Value Model                                                    	| 
 |-----	|---------------------------------------------------------------	|---------------------------------------------------------------------------	|
-| 7B  	|[🤗](https://huggingface.co/MARIO-Math-Reasoning/MARIO-7B-v1)[🤖](https://modelscope.cn/models/damo/)MARIO-7B| [🤗](https://huggingface.co/MARIO/MARIO-OVM-7B)[🤖](https://modelscope.cn/models/damo/)MARIO-OVM-7B|
-| 34B 	|[🤗](https://huggingface.co/MARIO-Math-Reasoning/MARIO-34B-v0)[🤖](https://modelscope.cn/models/damo/)MARIO-34B||
+| 7B  	|[🤗](https://huggingface.co/MARIO-Math-Reasoning/MARIO-7B-v1)[🤖](https://www.modelscope.cn/models/iic/MARIO-7B-v1)MARIO-7B| [🤗](https://huggingface.co/MARIO/MARIO-OVM-7B)[🤖](https://www.modelscope.cn/models/iic/MARIO-OVM-7B-v1)MARIO-OVM-7B|
+| 34B 	|[🤗](https://huggingface.co/MARIO-Math-Reasoning/MARIO-34B-v0)[🤖](https://www.modelscope.cn/models/iic/MARIO-34B-v0)MARIO-34B||
 
 
 ## Performance
