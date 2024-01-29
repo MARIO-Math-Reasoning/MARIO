@@ -62,13 +62,17 @@ Single question inference with visualization.
 python react.py -c /path/to/checkpoint_dir -q "Compute tan(45)." --verbose
 ```
 
-### **Large-scale Evaluation with vllm**
+### **Batch inference with vllm**
 
 ```bash
-python batch_react.py -c /path/to/result_output -q /path/to/question_file
+python batch_react.py -c /path/to/checkpoint_dir -q /path/to/question_file
 ```
 
 Question file should be in `jsonl` format, where each line is a json string. The json string should at least include a key value pair for question.
+
+### **Evaluation**
+
+TODO
 
 ## Acknowledgements
 - hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
