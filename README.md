@@ -72,7 +72,11 @@ Question file should be in `jsonl` format, where each line is a json string. The
 
 ### **Evaluation**
 
-TODO
+```bash
+python eval.py -q /path/to/question_file
+```
+
+Question file should be in `jsonl` format, where each line is a json string containing 'pred' and 'answer' keys.
 
 ## Acknowledgements
 - hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
