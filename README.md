@@ -76,7 +76,7 @@ Question file should be in `jsonl` format, where each line is a json string. The
 python eval.py -q /path/to/question_file
 ```
 
-Question file should be in `jsonl` format, where each line is a json string containing 'pred' and 'answer' keys.
+Question file should be in `jsonl` format, where each line is a json string at least containing "pred" and "answer" keys for prediction and ground truth, respectively.
 
 ## Acknowledgements
 - hiyouga's [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/)
