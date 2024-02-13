@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field, root_validator
 from timeout_decorator import timeout
 
 
-TIMEOUT_SECONDS = 15
+TIMEOUT_SECONDS = 1500
 TIMEOUT_MESSAGE = f"Execution of the code snippet has timed out for exceeding {TIMEOUT_SECONDS} seconds."
 
 
@@ -143,15 +143,15 @@ class PythonInterpreter(BaseModel):
             ret_strs = []
             if len(print_indexs) == 1:
                 run_flag, ret = _sub_run(tree.body)
-                if not run_flag:
-                    return f"Error: {ret}"
+                #if not run_flag:
+                #    return f"Error: {ret}"
                 return f"{ret}"
             for start_idx, end_idx in zip([-1] + print_indexs, print_indexs):
                 node_source = ast.get_source_segment(query, tree.body[end_idx])
                 run_flag, ret = _sub_run(tree.body[start_idx + 1:end_idx + 1])
-                if not run_flag:
-                    ret_strs.append(f"{extract_content(node_source)} Error {ret}")
-                    break
+                #if not run_flag:
+                #    ret_strs.append(f"{extract_content(node_source)} Error {ret}")
+                #    break
                 ret_strs.append(f"{extract_content(node_source)} {ret}")
             return "".join(ret_strs)
         except Exception as e:
@@ -186,6 +186,9 @@ if __name__ == '__main__':
     args = parse_args()
 
     python = PythonInterpreter(globals=globals(), locals=None)
-    print(python.run("```print('unittest')```"))
-    print(python.run(args.testcase))
+    #print(python.run("```print('unittest')```"))
+    #print(python.run(args.testcase))
+    #code_snippet = "```python\ntest_scores = [65, 94, 81, 86, 74]\naverage = float(sum(test_scores)) / len(test_scores)\nif average >= 80:\n    print(\"Wilson's current math grade is:\", average)\nelse:\n    print(\"Wilson needs to study more to achieve a grade of 80 or higher.\")\n```"
+    code_snippet = "```python\ndef foo(x):\n    if x > 0:\n        print(\"x > 0\")\n    else:\n        print(\"x <= 0\")\n\nfoo(a)\n```"
+    print(python.run(code_snippet))
 

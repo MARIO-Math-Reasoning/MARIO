@@ -51,12 +51,18 @@ pip install -r requirements.txt
 pip install -e ./math_evaluation
 ```
 
+## **Data Generation**
+
+```bash
+python gpt_react.py --verbose -g "gpt-4-1106-preview" -q "Given complex number $(a+i)(1-ai)=2,\;a \in \mathbb{R}$, find $a$."
+```
+
 ## **Training and Inference**
 
 Our training is mostly performed on LLaMA-Factory code base. Please refer to that repo for more details.
 
 ### **Quick Start**
-Single question inference with visualization.
+Single question inference with screen output.
 
 ```bash
 python react.py -c /path/to/checkpoint_dir -q "Compute tan(45)." --verbose

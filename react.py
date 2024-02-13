@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import re
 import argparse
+from typing import List, Dict
 from termcolor import colored
 
 from vllm.outputs import RequestOutput
@@ -19,10 +20,11 @@ PRIMER = "<p>\n"
 STOP = ["\n</code>", "</code>"]
 CODE_LTAG = "<code>"
 CODE_RTAG = "</code>"
-CODE_OUTPUT = "Output: "
 
 
-python_interpreter = PythonInterpreter(globals=globals(), locals=None)
+def _python_ast_init():
+    python = PythonInterpreter(globals=globals(), locals=None)
+    return python
 
 
 def tool_wrapper(tool):
@@ -31,16 +33,56 @@ def tool_wrapper(tool):
     return _tool
 
 
+def no_action_wrapper(tool):
+    def _tool(query):
+        return "No action, no observation. Please continue to solve."
+    return _tool
+
+
+# We define a dummy tool, to implement multiple tools.
+tools = {
+    "None": no_action_wrapper(_python_ast_init()),
+    "python_interpreter": tool_wrapper(_python_ast_init()),
+}
+
+
+def action_execution(parser_results: List[Dict[str, str]]) -> str:
+
+    @timeout(30)
+    def _action_execution(parser_results: List[Dict[str, str]]) -> str:
+        cur_action = parser_results[-1]["action"]
+        tool_func = tools[cur_action]
+
+        # first, execute historical action inputs with the same action, but not output
+        for history_act in parser_results[:-1]:
+            if history_act["action"] == cur_action:
+                _ = tool_func(history_act["action_input"])
+        
+        # then, execute current action input, and return output
+        observation = str(tool_func(parser_results[-1]["action_input"]))
+        del tool_func
+        return observation 
+    
+    try:
+        observation = _action_execution(parser_results)
+    except Exception as e:
+        observation = "{}: {}".format(type(e).__name__, str(e))
+
+    return observation
+
+
 class STEP(object):
     
     def __init__(self,
         text: str = "",
-        code_snippet: str = "",
+        action: str = "",
+        action_input: str = "",
         final_answer: str = "",
         depth: int = 0,
     ):
         self.text = text
-        self.code_snippet = code_snippet
+        self.action = action
+        self.action_input = action_input
         self.final_answer = final_answer
         self.depth = depth
 
@@ -58,7 +100,7 @@ class ReactSolver(object):
 
         self.current_step = self.start_step
         self.step_texts = []
-        self.step_code_snippets = []
+        self.step_actions = []
 
     def step_generate_flag(self) -> bool:
         return not self.current_step.is_terminal and self.current_step.depth <= self.args.max_depth
@@ -84,10 +126,16 @@ class ReactSolver(object):
             step_generate(output)
         """
         sampled_step_result = (PRIMER + output.outputs[0].text).strip()
-
         # parsing code snippet
-        step_result, parser_result = self.code_parser(sampled_step_result)
+        step_result, parser_result = self.action_parser(sampled_step_result)
+        self.process_step_result(step_result, parser_result, "Output")
 
+    def process_step_result(
+        self, 
+        step_result: str,
+        parser_result: Dict[str, str],
+        observation_key: str,
+    ) -> None:
         if self.args.verbose:
             print(colored(f"{step_result}", "green"))
 
@@ -98,37 +146,42 @@ class ReactSolver(object):
         if parser_result is None:
             new_step.is_terminal = True
             new_step.text = step_result
+            new_step.final_anser = "Cannot generate parsable text."
         elif parser_result["final_answer"]:
             new_step.is_terminal = True
             new_step.text = step_result
             new_step.final_answer = parser_result["final_answer"]
-        elif parser_result["code_snippet"]:
-            code_snippet = parser_result["code_snippet"]
-            observation = self.code_execution(code_snippet)
-            # update history
-            self.step_code_snippets.append(code_snippet)
+        elif parser_result["action"]:
+            new_step.action = parser_result["action"]
+            new_step.action_input = parser_result["action_input"]
+            # update step_actions
+            self.step_actions.append(parser_result)
+
+            # get observation
+            observation = action_execution(self.step_actions)
 
             if self.args.verbose:
-                print(colored(f"{CODE_OUTPUT}{observation}\n", "yellow"))
+                print(colored(f"{observation_key}: {observation}\n", "yellow"))
             
-            new_step.text = f"{step_result}\n{CODE_OUTPUT}{observation}"
-            new_step.code_snippet = code_snippet
+            new_step.text = f"{step_result}\n{observation_key}: {observation}"
         else:
+            print("WARNING:")
             new_step.text = step_result
         
-        # update history
+        # update step_texts
         self.step_texts.append(new_step.text)
         # update current step
         self.current_step.next_step = new_step
         self.current_step = new_step
 
-    def code_parser(self, text: str):
+    def action_parser(self, text: str):
         includes_answer = "Final Answer:" in text
         regex = r"{code_ltag}[\s]*(.*)".format(code_ltag=CODE_LTAG)
         code_match = re.search(regex, text, re.DOTALL)
 
         parser_result = { 
-            "code_snippet": "",
+            "action": "",
+            "action_input": "",
             "final_answer": "",
         }
 
@@ -139,7 +192,8 @@ class ReactSolver(object):
             
             text = f"{text}\n{CODE_RTAG}"
             code_snippet = code_match.group(1)
-            parser_result["code_snippet"] = code_snippet.strip(" ").strip('"')
+            parser_result["action"] = "python_interpreter"
+            parser_result["action_input"] = code_snippet.strip(" ").strip('"')
             return text, parser_result
 
         elif includes_answer:
@@ -149,28 +203,6 @@ class ReactSolver(object):
         else:
             print(f"Warning: Could not parse LLM output: `{text}`")
             return text, None
-    
-    def code_execution(self, code_snippet: str) -> str:
-
-        @timeout(30)
-        def _code_execution(code_snippet: str) -> str:
-            tool_func = tool_wrapper(python_interpreter)
-
-            # first, execute history code snippets
-            for history_cs in self.step_code_snippets:
-                _ = tool_func(history_cs)
-            
-            # then, execute new code snippets
-            observation = str(tool_func(code_snippet))
-            del tool_func
-            return observation 
-        
-        try:
-            observation = _code_execution(code_snippet)
-        except Exception as e:
-            observation = "{}: {}".format(type(e).__name__, str(e))
-    
-        return observation
 
 
 def parse_args():
