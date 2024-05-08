@@ -48,8 +48,9 @@ Clone this repository and install the required packages:
 git clone https://github.com/MARIO-Math-Reasoning/MARIO.git
 cd MARIO
 pip install -r requirements.txt
-pip install -e ./math_evaluation
 ```
+
+`math_evaluaiton` is deprecated. Please use `https://github.com/MARIO-Math-Reasoning/MARIO_EVAL.git`.
 
 ## **Data Generation**
 
